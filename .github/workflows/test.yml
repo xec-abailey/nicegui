@@ -23,6 +23,8 @@ jobs:
       - name: install dependencies
         run: |
           poetry install
+          # try fix issue with importlib_resources
+          pip install importlib-resources
       - name: test startup
         run: poetry run ./test_startup.sh
       - name: setup chromedriver
